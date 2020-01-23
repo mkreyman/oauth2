@@ -56,7 +56,7 @@ defmodule OAuth2.Strategy.AuthCode do
     |> put_param(:client_id, client.client_id)
     |> put_param(:redirect_uri, client.redirect_uri)
     |> merge_params(params)
-    |> basic_auth()
+    # |> basic_auth()  # to prevent errors related to invalid authorization header
     |> put_headers(headers)
   end
 end
